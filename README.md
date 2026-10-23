@@ -53,6 +53,7 @@ Models a single guitar string using `RingBuffer`.
 * `tic()` – Executes one step of Karplus-Strong averaging and updates `ticCount`.
 * `sample()` - Return the value of peek.
 * Now compile and run the main method in `GuitarString`.  It should print out cells 0-24 of the buffer with cell 24 showing 0.2223
+* Next, compile and run `StringSynthLite`.  You should be able to play the notes A and C by clicking in the popup window and typing 'a' and 'c'.
 
 ### Task 3: `StringSynth.java`
 Build the full 37-note keyboard synthesizer.
