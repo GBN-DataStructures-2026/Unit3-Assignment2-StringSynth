@@ -44,6 +44,7 @@ Implement a circular array queue of doubles.
 * `double remove()` – Dequeues sample from `front`. Throws `QueueUnderflowException` if empty.
 * `double peek()` – Returns sample at `front` without removing.
 * Maintain `front` and `rear` pointers using modulo capacity math: `(index + 1) % capacity`.
+* Now compile and run the main method in RingBuffer to make sure it works.  Your output should say "Size after wrap-around is 100.  Final peek value: 5050.0
 
 ### Task 2: `GuitarString.java`
 Models a single guitar string using `RingBuffer`.
