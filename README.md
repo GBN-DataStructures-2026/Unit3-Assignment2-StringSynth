@@ -25,6 +25,7 @@ As the sound wave bounces back and forth, energy decays and higher harmonics smo
 
 $$\text{newSample} = 0.994 \times \frac{x + y}{2}$$
 
+```text
 Trace Example:
   time t:    [ .2 ] [ .4 ] [ .5 ] [ -.2 ]  <-- Dequeue .2, Peek .4
                \      /
