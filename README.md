@@ -11,7 +11,7 @@ At the heart of sound synthesis is a **Queue Abstract Data Type (ADT)**. You wil
 
 When a guitar string is plucked, energy travels along the string in acoustic waves. We model a string vibrating at frequency $f$ using a circular queue of capacity $N$:
 
-$$N = \left\lceil \frac{\text{SAMPLE\_RATE}}{\text{frequency}} \right\rceil = \left\lceil \frac{44100}{f} \right\rceil$$
+$$N = \left\lceil \frac{\text{Sample Rate}}{\text{frequency}} \right\rceil = \left\lceil \frac{44100}{f} \right\rceil$$
 
 ### 1. Plucking the String (`pluck()`)
 Plucking excites the string with white noise. We model this by filling all $N$ slots of our queue with random floating-point values between $-0.5$ and $+0.5$.
