@@ -4,54 +4,39 @@
  */
 public class StringSynth 
 {
+    // Piano keyboard mapping corresponding to 37 chromatic notes from Concert C to High C
     private static final String KEYBOARD = "q2we4r5ty7u8i9op-[=zxdcfvgbnjmk,.;/' ";
     private static final int NUM_NOTES = 37;
 
     public static void main(String[] args) 
     {
-        // TODO:
-        // 1. Create an array of 37 GuitarString objects.
-        // 2. Frequency formula for note i: 440.0 * Math.pow(2, (i - 24) / 12.0)
+        // TODO: Create an array of 37 GuitarString objects.
+        // Initialize each string i with frequency: 440.0 * Math.pow(2, (i - 24) / 12.0)
         
-        GuitarString[] strings = new GuitarString[NUM_NOTES];
-        for (int i = 0; i < NUM_NOTES; i++) 
-        {
-            double freq = 440.0 * Math.pow(2, (i - 24) / 12.0);
-            strings[i] = new GuitarString(freq);
-        }
 
-        System.out.println("StringSynth is ready! Click on the graphics window and play keys.");
 
+        System.out.println("StringSynth is ready! Click on the graphics window and start playing.");
+
+        // Main simulation and audio loop
         while (true) 
         {
-            // Check for user key press
-            if (StdDraw.hasNextKeyTyped()) 
-            {
-                char key = StdDraw.nextKeyTyped();
-                int index = KEYBOARD.indexOf(key);
+            // TODO: Step 1 - Handle user input
+            // Check if user typed a key (StdDraw.hasNextKeyTyped()).
+            // If true, read character (StdDraw.nextKeyTyped()) and find its index in KEYBOARD.
+            // If index is valid (>= 0), pluck the corresponding string in your array.
 
-                // Pluck matching string if key exists in KEYBOARD string
-                if (index != -1) 
-                {
-                    strings[index].pluck();
-                }
-            }
 
-            // Superposition: Sum samples across all 37 guitar strings
-            double sample = 0.0;
-            for (int i = 0; i < NUM_NOTES; i++) 
-            {
-                sample += strings[i].sample();
-            }
+            // TODO: Step 2 - Compute superposition
+            // Calculate the sum of sample() across all 37 guitar strings.
 
-            // Send superposition sample to audio card
-            StdAudio.play(sample);
 
-            // Advance simulation 1 tic for all strings
-            for (int i = 0; i < NUM_NOTES; i++) 
-            {
-                strings[i].tic();
-            }
+            // TODO: Step 3 - Play audio sample
+            // Send the total sample sum to StdAudio.play()
+
+
+            // TODO: Step 4 - Advance physics simulation
+            // Call tic() on all 37 guitar strings.
+
         }
     }
 }
