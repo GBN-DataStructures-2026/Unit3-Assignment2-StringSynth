@@ -38,10 +38,10 @@ public class StringSynthLite
                 }
             }
 
-            // Superposition: Compute the sum of the acoustic wave samples[cite: 51, 58]
-            double sample = stringA.sample() + stringC.sample();[cite: 51]
+            // Superposition: Compute the sum of the acoustic wave samples
+            double sample = stringA.sample() + stringC.sample();
 
-            // Send superposition sample to sound card[cite: 51]
+            // Send superposition sample to sound card
             StdAudio.play(sample);
 
             // Advance the simulation of each guitar string by one time step (tic)[cite: 51]
