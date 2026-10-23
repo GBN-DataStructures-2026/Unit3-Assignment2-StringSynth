@@ -18,12 +18,13 @@ public class RingBuffer
      */
     public RingBuffer(int capacity)
     {
-        // TODO: Initialize array of size capacity, front = 0, rear = 0, size = 0
+        // TODO: Initialize array of size capacity, front = 0, rear = -1, size = 0
     }
 
     public int size()
     {
         // TODO: Return current number of items in buffer
+        // You can use the size variable instead of calculating from front and rear
         return 0;
     }
     
