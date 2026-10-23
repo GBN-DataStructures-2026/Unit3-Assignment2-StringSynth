@@ -9,7 +9,7 @@
  *
  *************************************************************************/
 
-import java.applet.*;
+//import java.applet.*;
 import java.io.*;
 import java.net.*;
 import javax.sound.sampled.*;
