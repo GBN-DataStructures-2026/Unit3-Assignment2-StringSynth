@@ -33,7 +33,7 @@ Trace Example:
                ↓
   time t+1:  [ .4 ] [ .5 ] [ -.2 ] [ .2982 ] <-- Enqueue .2982 at rear
 
----
+```
 
 ## Your Tasks
 
