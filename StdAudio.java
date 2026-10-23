@@ -129,39 +129,6 @@ public final class StdAudio {
 
 
 
-    /**
-     * Play a sound file (in .wav, .mid, or .au format) in a background thread.
-     */
-    @SuppressWarnings("deprecation")
-    public static void play(String filename) {
-        URL url = null;
-        try {
-            File file = new File(filename);
-            if (file.canRead()) url = file.toURI().toURL();
-        }
-        catch (MalformedURLException e) { e.printStackTrace(); }
-        // URL url = StdAudio.class.getResource(filename);
-        if (url == null) throw new RuntimeException("audio " + filename + " not found");
-        AudioClip clip = Applet.newAudioClip(url);
-        clip.play();
-    }
-
-    /**
-     * Loop a sound file (in .wav, .mid, or .au format) in a background thread.
-     */
-    public static void loop(String filename) {
-        URL url = null;
-        try {
-            File file = new File(filename);
-            if (file.canRead()) url = file.toURI().toURL();
-        }
-        catch (MalformedURLException e) { e.printStackTrace(); }
-        // URL url = StdAudio.class.getResource(filename);
-        if (url == null) throw new RuntimeException("audio " + filename + " not found");
-        AudioClip clip = Applet.newAudioClip(url);
-        clip.loop();
-    }
-
 
     // return data as a byte array
     private static byte[] readByte(String filename) {
