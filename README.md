@@ -64,6 +64,7 @@ Build the full 37-note keyboard synthesizer.
   2. Compute superposition (sum of `sample()` across all 37 strings).
   3. Send total sample to `StdAudio.play(sample)`.
   4. Call `tic()` on all 37 strings.
+* Now you can compile and run and play a song!  Look at `keyboard.png` to see what keys are what notes.
 
 ---
 
