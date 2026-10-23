@@ -44,11 +44,11 @@ Implement a circular array queue of doubles.
 * `double remove()` – Dequeues sample from `front`. Throws `QueueUnderflowException` if empty.
 * `double peek()` – Returns sample at `front` without removing.
 * Maintain `front` and `rear` pointers using modulo capacity math: `(index + 1) % capacity`.
-* Now compile and run the main method in RingBuffer to make sure it works.  Your output should say "Size after wrap-around is 100.  Final peek value: 5050.0
+* Now compile and run the main method in RingBuffer to make sure it works.  Your output should say "Size after wrap-around is 100.  Final peek value: 5050.0"
 
 ### Task 2: `GuitarString.java`
 Models a single guitar string using `RingBuffer`.
-* `GuitarString(double frequency)` – Calculates $N = \lceil 44100 / f \rceil$ and initializes `RingBuffer` with $N$ zeroes.
+* `GuitarString(double frequency)` – Calculates $N = \lceil 44100 / f \rceil$ and initializes `RingBuffer` with $N$ zeroes.  Note that this is using the ceiling function, which you can find in Java's Math class.
 * `pluck()` – Replaces all elements in `RingBuffer` with random values in $[-0.5, +0.5]$.
 * `tic()` – Executes one step of Karplus-Strong averaging and updates `ticCount`.
 
