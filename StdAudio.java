@@ -132,6 +132,7 @@ public final class StdAudio {
     /**
      * Play a sound file (in .wav, .mid, or .au format) in a background thread.
      */
+    @SuppressWarnings("deprecation")
     public static void play(String filename) {
         URL url = null;
         try {
