@@ -132,6 +132,6 @@ The Karplus-Strong algorithm can be modified to synthesize completely different 
 
 * **Drum / Percussion:** Flip the sign of the new sample with probability $0.5$ during `tic()`:
 
-$$\text{newSample} = \begin{cases} +0.994 \times \frac{x + y}{2} & \text{with prob } 0.5 \\[6pt] -0.994 \times \frac{x + y}{2} & \text{with prob } 0.5 \end{cases}$$
+$$\text{newSample} = \begin{cases} +0.994 \times \frac{x + y}{2} & \text{with prob } 0.5 \text{ or } -0.994 \times \frac{x + y}{2} & \text{with prob } 0.5 \end{cases}$$
 
 * **Harp / Piano:** Adjust the decay factor (e.g., $0.998$ for long piano sustain) or change the excitation during `pluck()` from white noise to a square wave or sine wave.
