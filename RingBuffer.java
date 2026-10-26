@@ -40,34 +40,43 @@ public class RingBuffer
         return false;
     }
     
-    /**
-     * Enqueues value to the rear of the ring buffer.
-     * Throws RuntimeException or QueueOverflowException if buffer is full.
-     */
-    public void add(double value)
-    {
-        // TODO: Enqueue value at rear, advance rear modulo capacity, increment size
+/**
+ * Enqueues value to the rear of the ring buffer.
+ * Throws IllegalStateException if the buffer is full.
+ */
+public void add(double value) {
+    if (isFull()) {
+        throw new IllegalStateException("RingBuffer is full!");
     }
-    
-    /**
-     * Returns (without deleting) the sample at the front of the queue.
-     * Throws QueueUnderflowException if buffer is empty.
-     */
-    public double peek()
-    {
-        // TODO: Return sample at front index
-        return 0.0;
+    rear = (rear + 1) % data.length;
+    data[rear] = value;
+    size++;
+}
+
+/**
+ * Returns (without deleting) the sample at the front of the queue.
+ * Throws QueueUnderflowException if the buffer is empty.
+ */
+public double peek() {
+    if (isEmpty()) {
+        throw new QueueUnderflowException("RingBuffer is empty!");
     }
-    
-    /**
-     * Dequeues and returns the sample from the front of the queue.
-     * Throws QueueUnderflowException if buffer is empty.
-     */
-    public double remove()
-    {
-        // TODO: Dequeue sample from front, advance front modulo capacity, decrement size
-        return 0.0;
+    return data[front];
+}
+
+/**
+ * Dequeues and returns the sample from the front of the queue.
+ * Throws QueueUnderflowException if the buffer is empty.
+ */
+public double remove() {
+    if (isEmpty()) {
+        throw new QueueUnderflowException("RingBuffer is empty!");
     }
+    double temp = data[front];
+    front = (front + 1) % data.length;
+    size--;
+    return temp;
+}
     
     /**
      * Test client to verify RingBuffer circular logic.
